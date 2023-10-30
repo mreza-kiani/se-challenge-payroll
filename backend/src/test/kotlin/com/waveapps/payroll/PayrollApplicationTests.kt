@@ -71,6 +71,15 @@ class PayrollApplicationTests {
         val payrollReport = payrollService.getPayrollReport()
         Assertions.assertEquals(13, payrollReport.employeeReports.size)
         Assertions.assertEquals("$150.00", payrollReport.employeeReports.first().amountPaid)
+        Assertions.assertEquals("2023-11-01", payrollReport.employeeReports.first().payPeriod.startDate)
+        Assertions.assertEquals("2023-11-15", payrollReport.employeeReports.first().payPeriod.endDate)
+        Assertions.assertEquals("$220.00", payrollReport.employeeReports[1].amountPaid)
+        Assertions.assertEquals("2023-11-16", payrollReport.employeeReports[1].payPeriod.startDate)
+        Assertions.assertEquals("2023-11-30", payrollReport.employeeReports[1].payPeriod.endDate)
+        val employee4Record = payrollReport.employeeReports.first { it.employeeId == 4 }
+        Assertions.assertEquals("$150.00", employee4Record.amountPaid)
+        Assertions.assertEquals("2023-02-16", employee4Record.payPeriod.startDate)
+        Assertions.assertEquals("2023-02-28", employee4Record.payPeriod.endDate)
     }
 
     @Test
