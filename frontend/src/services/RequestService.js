@@ -19,15 +19,6 @@ export class RequestService {
             });
     }
 
-    static post(path, data, successCallback, errorCallback) {
-        const requestOptions = {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data)
-        };
-        this.request(path, requestOptions, successCallback, errorCallback)
-    }
-
     static get(path, successCallback, errorCallback) {
         const requestOptions = {
             method: 'GET',

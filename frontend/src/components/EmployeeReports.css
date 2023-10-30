@@ -1,0 +1,30 @@
+ul.reports-ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+li:hover {
+    background-color: #ebebeb;
+}
+
+.employee-reports {
+    max-height: 400px; /* Set a maximum height for the reports container */
+    overflow-y: auto; /* Add a vertical scrollbar when content exceeds the container height */
+    margin-top: 20px; /* Adjust the margin to separate it from the previous content */
+}
+
+.reports-list {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #fff;
+    max-height: 300px; /* Set a maximum height for the reports list */
+    overflow-y: auto; /* Add a vertical scrollbar when the list exceeds the maximum height */
+}
