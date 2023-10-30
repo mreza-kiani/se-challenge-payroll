@@ -1,13 +1,18 @@
 import React, {useState} from 'react';
 import {MessageService} from "../services/MessageService";
-import {FilePond} from "react-filepond";
+import {FilePond, registerPlugin} from "react-filepond";
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+
 
 function FileUploader() {
     const [files, setFiles] = useState(null);
 
+    registerPlugin(FilePondPluginFileValidateType);
+
     return (
         <FilePond
             files={files}
+            acceptedFileTypes={['text/csv']}
             allowMultiple={false}
             allowReorder={true}
             maxFiles={1}
